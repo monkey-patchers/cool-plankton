@@ -11,52 +11,29 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - name: Install
-        run: |
-          yarn
-      - name: Build
-        run: |
-          yarn run build
       - name: Audit URLs using Lighthouse
         id: LHCIAction
         uses: treosh/lighthouse-ci-action@v3
         with:
           urls: |
             
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/about.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/azimuth-improvements.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/customer-loyalty.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/customer-service-skills-that-every-employee-needs.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/design-azimuth.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/design-team-collaborates.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/index.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/sales-as-service.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/set-big-goals.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/user-journey-mapping.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/working-from-home.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/contact.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/features.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/index.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/pricing.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/signup.html
-            
-              https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/style-guide.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/about.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/azimuth-improvements.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/customer-loyalty.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/customer-service-skills-that-every-employee-needs.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/design-azimuth.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/design-team-collaborates.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/index.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/sales-as-service.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/set-big-goals.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/user-journey-mapping.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/working-from-home.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/contact.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/features.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/index.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/pricing.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/signup.html
+            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/style-guide.html
             
           budgetPath: ./budget.json # test performance budgets
           uploadArtifacts: true # save results as an action artifacts
