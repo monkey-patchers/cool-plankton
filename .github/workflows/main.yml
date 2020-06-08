@@ -17,23 +17,23 @@ jobs:
         with:
           urls: |
             
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/about.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/azimuth-improvements.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/customer-loyalty.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/customer-service-skills-that-every-employee-needs.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/design-azimuth.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/design-team-collaborates.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/index.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/sales-as-service.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/set-big-goals.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/user-journey-mapping.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/blog/working-from-home.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/contact.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/features.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/index.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/pricing.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/signup.html
-            https://__STACKBIT_NETLIFY_SITENAME__.netlify.app/style-guide.html
+            __STACKBIT_NETLIFY_SITENAME__/about.html
+            __STACKBIT_NETLIFY_SITENAME__/blog/azimuth-improvements.html
+            __STACKBIT_NETLIFY_SITENAME__/blog/customer-loyalty.html
+            __STACKBIT_NETLIFY_SITENAME__/blog/customer-service-skills-that-every-employee-needs.html
+            __STACKBIT_NETLIFY_SITENAME__/blog/design-azimuth.html
+            __STACKBIT_NETLIFY_SITENAME__/blog/design-team-collaborates.html
+            __STACKBIT_NETLIFY_SITENAME__/blog/index.html
+            __STACKBIT_NETLIFY_SITENAME__/blog/sales-as-service.html
+            __STACKBIT_NETLIFY_SITENAME__/blog/set-big-goals.html
+            __STACKBIT_NETLIFY_SITENAME__/blog/user-journey-mapping.html
+            __STACKBIT_NETLIFY_SITENAME__/blog/working-from-home.html
+            __STACKBIT_NETLIFY_SITENAME__/contact.html
+            __STACKBIT_NETLIFY_SITENAME__/features.html
+            __STACKBIT_NETLIFY_SITENAME__/index.html
+            __STACKBIT_NETLIFY_SITENAME__/pricing.html
+            __STACKBIT_NETLIFY_SITENAME__/signup.html
+            __STACKBIT_NETLIFY_SITENAME__/style-guide.html
             
           budgetPath: ./budget.json # test performance budgets
           uploadArtifacts: true # save results as an action artifacts
