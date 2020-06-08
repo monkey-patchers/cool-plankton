@@ -1,13 +1,22 @@
 import React from 'react';
 import _ from 'lodash';
-import moment from 'moment-strftime';
+import {graphql} from 'gatsby';
 
 import {Layout} from '../components/index';
 import {getPages, Link, safePrefix} from '../utils';
+import BlogPostFooter from '../components/BlogPostFooter';
+
+export const query = graphql`
+  query($url: String) {
+    sitePage(path: {eq: $url}) {
+      id
+    }
+  }
+`;
 
 export default class Blog extends React.Component {
     render() {
-        let display_posts = _.orderBy(getPages(this.props.pageContext.pages, '/posts'), 'frontmatter.date', 'desc');
+        let display_posts = _.orderBy(getPages(this.props.pageContext.pages, '/blog'), 'frontmatter.date', 'desc');
         return (
             <Layout {...this.props}>
             <div className="outer">
@@ -28,10 +37,7 @@ export default class Blog extends React.Component {
                         <div className="post-excerpt">
                           <p>{_.get(post, 'frontmatter.excerpt')}</p>
                         </div>
-                        <footer className="post-meta">
-                          <time className="published"
-                            dateTime={moment(_.get(post, 'frontmatter.date')).strftime('%Y-%m-%d %H:%M')}>{moment(_.get(post, 'frontmatter.date')).strftime('%B %d, %Y')}</time>
-                        </footer>
+                        <BlogPostFooter {...this.props} page={post} date_type={'short'} />
                       </div>
                     </div>
                   </article>

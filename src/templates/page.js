@@ -1,8 +1,17 @@
 import React from 'react';
 import _ from 'lodash';
+import {graphql} from 'gatsby';
 
 import {Layout} from '../components/index';
 import {safePrefix, htmlToReact} from '../utils';
+
+export const query = graphql`
+  query($url: String) {
+    sitePage(path: {eq: $url}) {
+      id
+    }
+  }
+`;
 
 export default class Page extends React.Component {
     render() {

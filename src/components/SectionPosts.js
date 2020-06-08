@@ -1,13 +1,13 @@
 import React from 'react';
 import _ from 'lodash';
-import moment from 'moment-strftime';
 
 import {htmlToReact, getPages, Link, safePrefix, markdownify} from '../utils';
+import BlogPostFooter from './BlogPostFooter';
 
 export default class SectionPosts extends React.Component {
     render() {
         let section = _.get(this.props, 'section');
-        let display_posts = _.orderBy(getPages(this.props.pageContext.pages, '/posts'), 'frontmatter.date', 'desc');
+        let display_posts = _.orderBy(getPages(this.props.pageContext.pages, '/blog'), 'frontmatter.date', 'desc');
         let recent_posts = display_posts.slice(0, 3);
         return (
             <section id={_.get(section, 'section_id')} className={'block posts-block bg-' + _.get(section, 'background') + ' outer'}>
@@ -38,10 +38,7 @@ export default class SectionPosts extends React.Component {
                         <div className="post-excerpt">
                           {markdownify(_.get(post, 'frontmatter.excerpt'))}
                         </div>
-                        <footer className="post-meta">
-                          <time className="published"
-                            dateTime={moment(_.get(post, 'frontmatter.date')).strftime('%Y-%m-%d %H:%M')}>{moment(_.get(post, 'frontmatter.date')).strftime('%B %d, %Y')}</time>
-                        </footer>
+                        <BlogPostFooter {...this.props} page={post} date_type={'short'} />
                       </div>
                     </div>
                   </article>

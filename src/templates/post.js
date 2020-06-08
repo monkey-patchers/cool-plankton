@@ -1,9 +1,18 @@
 import React from 'react';
 import _ from 'lodash';
-import moment from 'moment-strftime';
+import {graphql} from 'gatsby';
 
 import {Layout} from '../components/index';
 import {safePrefix, htmlToReact} from '../utils';
+import BlogPostFooter from '../components/BlogPostFooter';
+
+export const query = graphql`
+  query($url: String) {
+    sitePage(path: {eq: $url}) {
+      id
+    }
+  }
+`;
 
 export default class Post extends React.Component {
     render() {
@@ -28,10 +37,7 @@ export default class Post extends React.Component {
                   <div className="post-content">
                     {htmlToReact(_.get(this.props, 'pageContext.html'))}
                   </div>
-                  <footer className="post-meta">
-                    <time className="published"
-                      dateTime={moment(_.get(this.props, 'pageContext.frontmatter.date')).strftime('%Y-%m-%d %H:%M')}>{moment(_.get(this.props, 'pageContext.frontmatter.date')).strftime('%A, %B %e, %Y')}</time>
-                  </footer>
+                  <BlogPostFooter {...this.props} page={this.props.pageContext} date_type={'long'} />
                 </article>
               </div>
             </div>
