@@ -40,6 +40,6 @@ jobs:
           temporaryPublicStorage: true # upload lighthouse report to the temporary storage
       - name: Webhook
         uses: denar90/webhook-action@master
-        env:
+        with:
           webhookUrl: ${{secrets.STACKBIT_ACTION_WEBHOOK_URL}}
           data: '{ "gihub": ${{ toJSON(github) }}, "links": ${{steps.LHCIAction.outputs.links}} }'
