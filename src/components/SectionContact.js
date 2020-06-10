@@ -9,14 +9,14 @@ export default class SectionContact extends React.Component {
         return (
             <section id={_.get(section, 'section_id')} className={'block contact-block bg-' + _.get(section, 'background') + ' outer'}>
               <div className="block-header inner-small">
-                {_.get(section, 'title') && 
+                {_.get(section, 'title') && (
                 <h2 className="block-title">{_.get(section, 'title')}</h2>
-                }
-                {_.get(section, 'subtitle') && 
+                )}
+                {_.get(section, 'subtitle') && (
                 <p className="block-subtitle">
                   {htmlToReact(_.get(section, 'subtitle'))}
                 </p>
-                }
+                )}
               </div>
               <div className="block-content inner-medium">
                 {markdownify(_.get(section, 'content'))}

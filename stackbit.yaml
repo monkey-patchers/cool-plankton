@@ -1,7 +1,7 @@
 stackbitVersion: ~0.3.0
 ssgName: gatsby
-ssgVersion: 0.1.12
-buildCommand: ./ssg-build.sh
+ssgVersion: 2.3.30
+buildCommand: gatsby build
 publishDir: public
 staticDir: static
 uploadDir: images

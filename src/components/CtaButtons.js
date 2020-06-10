@@ -10,7 +10,7 @@ export default class CtaButtons extends React.Component {
             <p className="block-buttons">
               {_.map(actions, (action, action_idx) => (
                 <Link key={action_idx} to={safePrefix(_.get(action, 'url'))}
-                   {...(_.get(action, 'new_window') ? {target: '_blank', rel: 'noopener'} : null)}
+                   {...(_.get(action, 'new_window') ? ({target: '_blank', rel: 'noopener'}) : null)}
                    className={classNames('button', {'secondary': _.get(action, 'primary') !== true})}>{_.get(action, 'label')}</Link>
               ))}
             </p>
