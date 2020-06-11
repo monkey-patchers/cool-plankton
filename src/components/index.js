@@ -1,5 +1,4 @@
 import ActionLink from './ActionLink';
-import BlogPostFooter from './BlogPostFooter';
 import CtaButtons from './CtaButtons';
 import Footer from './Footer';
 import Header from './Header';
@@ -17,7 +16,6 @@ import Layout from './Layout';
 
 export {
     ActionLink,
-    BlogPostFooter,
     CtaButtons,
     Footer,
     Header,
@@ -36,7 +34,6 @@ export {
 
 export default {
     ActionLink,
-    BlogPostFooter,
     CtaButtons,
     Footer,
     Header,
