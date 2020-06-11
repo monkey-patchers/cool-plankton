@@ -12,22 +12,22 @@ export default class SectionCta extends React.Component {
               <div className="inner-large">
                 <div className="grid">
                   <div className="cell block-content">
-                    {_.get(section, 'title') && 
+                    {_.get(section, 'title') && (
                     <h2 className="block-title">{_.get(section, 'title')}</h2>
-                    }
-                    {_.get(section, 'subtitle') && 
+                    )}
+                    {_.get(section, 'subtitle') && (
                     <p className="block-subtitle">
                       {htmlToReact(_.get(section, 'subtitle'))}
                     </p>
-                    }
+                    )}
                   </div>
-                  {_.get(section, 'actions') && 
+                  {_.get(section, 'actions') && (
                   <div className="cell block-buttons">
                     {_.map(_.get(section, 'actions'), (action, action_idx) => (
                       <ActionLink key={action_idx} {...this.props} action={action} class_names={'button white large'} />
                     ))}
                   </div>
-                  }
+                  )}
                 </div>
               </div>
             </section>

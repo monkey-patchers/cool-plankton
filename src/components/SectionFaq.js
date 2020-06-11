@@ -10,16 +10,16 @@ export default class SectionFaq extends React.Component {
             <section id={_.get(section, 'section_id')} className={'block faq-block bg-' + _.get(section, 'background') + ' outer'}>
               <div className="inner-small">
                 <div className="block-header">
-                  {_.get(section, 'title') && 
+                  {_.get(section, 'title') && (
                   <h2 className="block-title">{_.get(section, 'title')}</h2>
-                  }
-                  {_.get(section, 'subtitle') && 
+                  )}
+                  {_.get(section, 'subtitle') && (
                   <p className="block-subtitle">
                     {htmlToReact(_.get(section, 'subtitle'))}
                   </p>
-                  }
+                  )}
                 </div>
-                {_.get(section, 'faq_items') && 
+                {_.get(section, 'faq_items') && (
                 <dl className="faq-accordion">
                   {_.map(_.get(section, 'faq_items'), (faqitem, faqitem_idx) => (<React.Fragment key={faqitem_idx}>
                   <dt key={faqitem_idx} className="accordion-header">
@@ -35,7 +35,7 @@ export default class SectionFaq extends React.Component {
                   </dd>
                   </React.Fragment>))}
                 </dl>
-                }
+                )}
               </div>
             </section>
         );
